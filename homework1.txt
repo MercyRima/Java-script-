@@ -1,0 +1,4 @@
+DIFFERENCE BETWEEN NULL AND UNDEFINED.
+
+Undefined is when a variable has been declared but it has not yet been assigned a value wherefore null is an assignment value that can be assigned
+ to a variable to represent no value. In short, both null and undefined in Javascript indicate absence of value.
