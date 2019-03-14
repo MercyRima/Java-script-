@@ -1,0 +1,12 @@
+DEFFERNCES BETWEEN DECLARATION, DEFINATION AND INITIALISATION
+1. Declaration means creating a new variable.
+These variables have no value.
+Declaration allocates memory.
+For example: var y
+2. Defination
+It means assigning a value to the declared variable.
+It assigns value to this allocated memory.
+For example: var y=5
+3. Initialisation
+It means to create a new object that was not there initially.
+Its represantated as init()
