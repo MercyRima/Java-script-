@@ -1,0 +1,17 @@
+function printfruits(fruits_list){
+fruits_lists=["melon", "grapes", "oranges", "mangoes", "melon", "plums", "banana","pears" "apple"]}
+
+>>undefined
+
+fruits_lists
+(9) ["melon", "grapes", "oranges", "mangoes", "melon", "plums", "banana","pears" "apple"]
+0: "melon"
+1: "grapes"
+2: "oranges"
+3: "mangoes"
+4: "melon"
+5: "plums"
+6: "bananas"
+7: "pears"
+8: "apple"
+length: 9
