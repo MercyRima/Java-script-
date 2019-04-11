@@ -1,0 +1,31 @@
+ Js week 6 Assing.
+...................................................................................................................
+var kiosk={
+
+kiwi:'kiwi',
+ 
+   melons:'melons',
+ 
+   getFruits () {
+
+return this.kiwi +' ' +this.melons;
+ 
+   },
+   
+ setFruit (pears) {
+
+return this.kiwi +' ' +this.melons +' ' +'pears';
+  
+  }
+
+}
+
+undefined
+
+kiosk.getFruits ()
+
+"kiwi melons"
+
+kiosk.setFruit()
+
+"kiwi melons pears"
