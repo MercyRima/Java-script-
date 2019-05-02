@@ -1,0 +1,19 @@
+Week8 ASSNG
+...............................
+let user = {
+ name: "mercy rima",
+ years: 23
+};
+ let{name,years,isStudent="false "}=user;
+console.log(name,years,isStudent)
+
+
+ function ask(question, yes, no) {
+   if (confirm(question)) yes()
+   else no();
+ }
+ ask(
+   "Do you feel good?",
+   function() { alert("You felt better."); },
+   function() { alert("You canceled the execution."); }
+ );
