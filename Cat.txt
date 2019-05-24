@@ -1,0 +1,169 @@
+CAT Corrections
+
+class Mkulima {
+  constructor () {
+    this.farms = [];
+    this.vendors = [];
+    this.products = [];
+    this.orders = [];
+  }
+  
+  addFarm(farmId, name, farmer, phone, address) {
+    let farm = {
+      farmId: farmId,
+      name: name,
+      farmer: farmer,
+      phone: phone,
+      address: address
+    }
+    this.farms.push (farm)
+  }
+  
+  getFarm(farmId) {
+    for(var i=0; i<this.farms.length; i++) {
+      let farm = this.farms[i];
+      if (farm.farmId == farmId) {
+        return farm
+      }
+    }
+  }
+  
+  removeFarm(farmId) {
+    let farm = this.getFarm(farmId)
+    let index = this.farms.indexOf(farm);
+    this.farms.splice(index,1)
+  }
+  
+  updateFarm(farmId, name, farmer, phone, address) {
+    let farm = {
+      farmId: farmId,
+      name: name,
+      farmer: farmer,
+      phone: phone,
+      address: address
+    }
+    this.farms.push (farm)
+  }
+  
+  addVendor(vendorId, name, phone) {
+    let vendor = {
+      vendorId: vendorId,
+      name: name,
+      phone: phone
+    }
+    this.vendors.push (vendor)
+  }
+  
+  getVendor(vendorId) {
+     for(var i=0; i<this.vendors.length; i++) {
+       let vendor = this.vendors[i];
+       if (vendor.vendorId == vendorId) {
+         return vendor
+       }
+     }
+  }
+  
+  removeVendor(vendorId) {
+    let vendor = this.getVendor(vendorId)
+    let index = this.vendors.indexOf(vendor);
+    this.vendors.splice(index,1)
+  }
+  
+  updateVendor(vendorId, name, phone) {
+    let vendor = {
+      vendorId: vendorId,
+      name: name,
+      phone: phone
+    }
+    this.vendors.push (vendor)
+  }
+  
+  addProduct(productId, name, price) {
+    let product = {
+      productId: productId,
+      name: name,
+      price: price
+    }
+    this.products.push (product)
+  }
+  
+  getProduct(productId) {
+    for(var i=0; i<this.products.length; i++) {
+      let product = this.products[i];
+      if (product.productId == productId) {
+        return product
+      }
+     }
+    }
+  
+  removeProduct(productId) {
+    let product = this.getProduct(productId)
+    let index = this.products.indexOf(product);
+    this.products.splice(index,1)
+  }
+  
+  updateProduct(productId, name, phone) {
+    let product = {
+      productId: productId,
+      name: name,
+      phone: phone
+    }
+    this.products.push (product)
+  }
+  
+
+  
+  calculateOrderCost (productId, quantity) {
+    for(var i=0; i<this.orders.length; i++) {
+      let order = this.orders[i];
+      if (order.productId == productId) {
+        return order
+    }
+   }
+  }
+ 
+  createOrder(productId, quantity, farmId, storeId) {
+    let order = {
+      productId: productId,
+      quantity: quantity,
+      farmId: farmId,
+      storeId: storeId
+    }
+    this.orders.push (order)
+  }
+  
+}
+
+var mkulima = new Mkulima();
+mkulima.addFarm(1,"Shamba","mercy","074526681","meru")
+mkulima.addFarm(2,"Plot","Rima","0700000002","kilimani")
+mkulima.removeFarm(1)
+mkulima.getFarm(1)
+mkulima.updateFarm(1,"Shamba2","poly","07458712311","Nanyuki")
+console.log(mkulima.farms)
+
+var mac = new Mkulima();
+mac.addVendor(1,"Shamba","mercy")
+mac.addVendor(2,"Plot","Rima")
+mac.removeVendor(2)
+mac.getVendor(2)
+mac.updateVendor(1,"Shamba002","poly")
+console.log(mac.vendors)
+
+var major = new Mkulima();
+major.addProduct(1,"Kiwi","KES 55")
+major.addProduct(2,"Sukuma","KES 35")
+major.removeProduct(1)
+major.getProduct(2)
+major.updateProduct(1,"Kiwi001","KES70")
+console.log(major.products)
+
+
+
+var mate = new Mkulima();
+mate.calculateOrderCost(2,"10 tonnes")
+console.log(mate.calculateOrderCost)
+
+var sweets = new Mkulima();
+sweets.createOrder(2,"15 packets",6,10)
+console.log(sweets.order)
