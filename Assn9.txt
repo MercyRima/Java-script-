@@ -1,0 +1,62 @@
+var body = document.body
+body.style.backgroundColor = 'silver'
+
+var h1 = document.getElementById("title")
+h1.style.color = "green"
+
+var h3 = document.getElementById("h3")
+h3.innerHTML = h3.innerHTML.toUpperCase()
+
+var h3 = document.getElementById("edding")
+h3.innerHTML = h3.innerHTML.toUpperCase()
+
+var li = document.createElement("li");
+li.innerHTML = ("pears")
+var fru = document.createElement("fruList");
+fruList.appendChild(li);
+
+var li = document.createElement("li");
+li.innerHTML = ("dania")
+var veg = document.createElement("vegList");
+vegList.appendChild(li);
+
+...........................................................................................................................................
+
+
+			ASYNC/AWAIT
+
+
+Definition and Usage of Async
+The async attribute is a boolean attribute.
+
+When present, it specifies that the script will be executed asynchronously as soon as it is available.
+
+Note: The async attribute is only for external scripts (and should only be used if the src attribute is present).
+
+Note: There are several ways an external script can be executed:
+
+If async is present: The script is executed asynchronously with the rest of the page (the script will be executed while the page continues the parsing)
+If async is not present and defer is present: The script is executed when the page has finished parsing
+If neither async or defer is present: The script is fetched and executed immediately, before the browser continues parsing the page
+
+
+					AWAIT
+
+works only inside async functions
+//let value = await promise;
+The keyword await makes JavaScript wait until that promise settles and returns its result.
+The await keyword is used in an async function to ensure that all promises returned in the async function are synchronized, ie. they wait for each other. 
+In using async and await, async is prepended when returning a promise, await is prepended when calling a promise.
+
+Example
+
+class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+
+new Waiter()
+  .wait()
+  .then(alert); // 1
+
