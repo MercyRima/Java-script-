@@ -1,0 +1,98 @@
+
+JavaScript assingment
+
+
+const setColor = () =>  {
+  const titleColor = document.getElementById("title");
+  
+  titleColor.style.color = titleColor.style.color === "green" ? "silver" : "green";
+}
+setInterval(setColor,  1000);
+
+const fruitLists = document.getElementById('fruitList');
+const vegLists = document.getElementById('vegList');
+
+
+[fruitLists,  vegLists].forEach((element) => element.style.display = 'none')
+
+const showDetails = (idTag) => {
+  const element = document.getElementById(idTag); 
+  element.style.display = element.style.display == 'none' ? 'inline-block' : 'none' 
+}
+
+let fruits = ['Mangoes', 'Bananas', 'Water melons']
+let vegetables = ['Onions', 'Tomatoes', 'Kales']
+
+//Create a list element with the names of fruits/vegetables
+function createListElement (text) {
+  const listItem = document.createElement("li")
+  const listItemText = document.createTextNode(text)
+  listItem.appendChild(listItemText)
+  return listItem
+}
+
+//Appends and Renders the list elements created on createListItem inside of the ul using their Ids
+function dynamicListRender() {
+  const listItems = (items) => {
+    return items.map((item) => createListElement(item))
+    //[ <li>Mangoes</li>,  <li>Bananas</li>,  <li>Water melons</li>]
+  }
+
+  function addListItems(id, allItems) {
+    listItems(allItems).forEach(listElement => {
+    id.appendChild(listElement)
+  }) 
+  }
+  
+  addListItems(vegLists, vegetables)
+  addListItems(fruitLists, fruits)
+}
+
+function inputValues() {
+  return document.getElementById('fruit').value 
+}
+
+function appendNewElement(){
+  fruits = [...fruits, inputValues()]
+  appendSingleItem(fruitLists, createListElement(inputValues()))
+}
+
+function appendSingleItem(id, singleItem){
+  id.appendChild(singleItem)
+}
+const vegsInput = document.getElementById('vegs');
+
+vegsInput.addEventListener('keyup', function(event){
+  if(event.keyCode === 13){
+    event.preventDefault();
+    const newVegetable = vegsInput.value
+    vegetables = [...vegetables, newVegetable]
+    appendSingleItem(vegLists, createListElement(newVegetable))
+  }
+})
+
+dynamicListRender()
+
+
+CSS
+
+#fruits #veglist{
+  padding:0 auto;
+  border:1px #000 solid;
+  height:100px
+  width:40%
+}
+
+HTML
+
+<h1 id="title"> Welcome to Greens Kiosk </h1>
+<p>We sell fruits and vegetables</p>
+<h3 onClick="showDetails('fruitList')">Fruits</h3>
+  <input name="fruit" id="fruit" placeholder="Fruit" type="text">
+  <button onClick="appendNewElement('id')">Submit</button><br/>
+  <ul id="fruitList" >
+  </ul>
+<h3 onClick="showDetails('vegList')">Vegetables</h3>
+  <input name="vegs" id="vegs" placeholder="Vegetables" type="text"><br/>
+  <ul id="vegList">
+  </ul>
